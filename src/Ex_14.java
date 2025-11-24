@@ -12,7 +12,7 @@ public class Ex_14 {
                 new Produto("Teclado Mecanico", 199.90, "Eletronicos")
         );
 
-        Optional<Produto> maisCaro = produtos.stream().collect(Collectors.maxBy(Comparator.comparingDouble(Produto::getPreco)));
+        Optional<Produto> maisCaro = produtos.stream().max(Comparator.comparingDouble(Produto::getPreco));
 
         if (maisCaro.isPresent()){
             System.out.println(maisCaro.get().getNome());
